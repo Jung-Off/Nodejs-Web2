@@ -1,0 +1,43 @@
+<form action="http://localhost:3000/process_create" method="post">
+    <p><input type="text" name="title"></p>
+    <p>
+        <textarea name="description"></textarea>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+
+
+
+### form태그는 form안에 각각의 컨트롤에 사용자가 입력한 정보를 submit버튼을 눌렀을 때 action속성이 가르키는 서버로 쿼리 스트링
+### 형태로 데이터를 전송하는 기능이다
+
+### http://localhost:3000/process_create?title=hi&description=lorem
+### 좋은 방법이 아님
+
+### 특정웹페이지를 가져갈때
+### http://localhost:3000/?id=CSS
+### 이건 좋은 방법
+### 주소상에 우리가 필요한 데이터가 포함이 되어있어야지만 copy해서 전송을 해도 그사람이 그걸 클릭해서 
+### 여기로 올거임
+
+### 여기서는 글을 쓰는 것! 수정과 삭제도
+### 주소에 데이터가 포함이 되어있다면 주소를 카피해서 누군가에게 보냈을 때 그사람이 클릭해서 들어오면
+### 서버의 정보가 수정 삭제 생성 되는 일이 발생!?!?
+
+### 서버에서 data를 가져올 때는 GET은 query
+
+### 생성, 수정, 삭제 >> url은 안됨
+### 눈에 보이지 않는 방식으로 보내야됨
+
+### method="post"
+
+### url은 http://localhost:3000/process_create까지만 
+### query string은 사람눈에 보이지 않는 은밀한 방식으로 서버로 전송
+
+### 위와 같이 전송을하면 아주 큰 데이터를 전송을 할 수 있다
+### url으로 하면 무한히 긴 data 수용하지 x > data짤릴수도
+
+### 서버의 data를 가져올 때는 GET method
+### 서버의 data 수정, 삭제, 생성 method는 POST
